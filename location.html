@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    <link rel="shortcut icon" href="./public/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./public/css/main.css">
+    <link rel="stylesheet" href="./public/css/animations.css">
+    <link rel="stylesheet" href="./public/css/page-location.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    <title>Location</title>
+</head>
+
+<body>
+    <div id="page-location">
+        <aside class="animate-right sidebar">
+            <img id="icon" src="./public/img/favicon.png" alt="City Visit">
+            <footer>
+                <button onclick="history.back()">
+                    <img src="./public/img/arrow.svg" alt="Voltar">
+                </button>
+            </footer>
+        </aside>
+
+        <main class="animate-appear with-sidebar">
+            <div class="location-details">
+                <img src="https://source.unsplash.com/random?id=1" alt="Local">
+
+                <div class="images">
+                    <button onclick="selectImage(event)" class="active" type="button">
+                        <img src="https://source.unsplash.com/random?id=2" alt="">
+                    </button>
+                    <button onclick="selectImage(event)" class="active" type="button">
+                        <img src="https://source.unsplash.com/random?id=3" alt="">
+                    </button>
+                    <button onclick="selectImage(event)" class="active" type="button">
+                        <img src="https://source.unsplash.com/random?id=4" alt="">
+                    </button>
+                    <button onclick="selectImage(event)" class="active" type="button">
+                        <img src="https://source.unsplash.com/random?id=5" alt="">
+                    </button>
+                    <button onclick="selectImage(event)" class="active" type="button">
+                        <img src="https://source.unsplash.com/random?id=6" alt="">
+                    </button>
+                    <button onclick="selectImage(event)" class="active" type="button">
+                        <img src="https://source.unsplash.com/random?id=7" alt="">
+                    </button>
+                </div>
+
+                <div class="location-details-content">
+                    <h1>Ponto principal da Cidade</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas atque commodi, eum architecto sunt perspiciatis dicta maxime ra </p>
+                    <div class="map-container">
+                        <div id="mapid"></div>
+                        <footer>
+                            <a href="#">Ver Rotas no Google Maps</a>
+                        </footer>
+                    </div>
+                    <hr />
+
+                    <h2>Intrucoes para Visita</h2>
+                    <p>asdhaisdgaskdugasdkjasgdklasjdgaskljdgaskljdg</p>
+
+                    <div class="open-details">
+                        <div class="hour">
+                            <img src="./public/img/clock.svg" alt="Horario"> Horario de visitas das 18h as 8h
+                        </div>
+                        <div class="open-on-weekends">
+                            <img src="./public/img/info.svg" alt="Info"> Atendemos Fim de Semana
+                        </div>
+                    </div>
+
+                    <button type="button" class="primary-button">
+                        <img src="./public/img/whatsapp.svg" alt="whatsapp">
+                        Entrar em contato
+                    </button>
+
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="./public/scripts/page-map.js"></script>
+</body>
+
+</html>

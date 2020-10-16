@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    <link rel="shortcut icon" href="./public/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./public/css/main.css">
+    <link rel="stylesheet" href="./public/css/animations.css">
+    <link rel="stylesheet" href="./public/css/page-landing.css">
+    <link rel="stylesheet" href="./public/css/page-map.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    <title>Localize um ponto turístico</title>
+</head>
+
+<body>
+    <div id="page-map">
+        <aside class="animate-right">
+            <header>
+                <img id="logo" src="./public/img/favicon.png" alt="City Visit">
+                <h2>Escolha um ponto turístico :)</h2>
+                <p>muitos lugares legais na cidade, descubra!</p>
+            </header>
+            <footer>
+                <strong>Barra Bonita</strong>
+                <p>São Paulo</p>
+            </footer>
+        </aside>
+
+        <div id="mapid" class="animate-appear"></div>
+
+        <a href="create-location.html" title="cadastre um novo local" class="create-location">
+            <img src="./public/img/plus.svg" alt="Criar Local">
+        </a>
+    </div>
+
+    <script src="public/scripts/page-map.js"></script>
+</body>
+
+</html>
