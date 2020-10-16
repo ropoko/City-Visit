@@ -4,7 +4,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
     .addTo(map);
 
 const icon = L.icon({
-    iconUrl: "./public/img/favicon.png",
+    iconUrl: "/img/pointer-map.png",
     iconSize: [58, 68],
     iconAnchor: [29, 68],
     popupAnchor: [170, 2]
@@ -18,7 +18,7 @@ function addMarker({ id, name, lat, lng }) {
         className: 'map-popup',
         minWidth: 240,
         minHeight: 240
-    }).setContent(`${name} <a href="location.html?id=${id}" class="choose-location"> <img src="./public/img/arrow-white.svg"></a>`)
+    }).setContent(`${name} <a href="location?id=${id}" class="choose-location"> <img src="/img/arrow.svg"></a>`)
 
     L.marker([lat, lng], { icon })
         .addTo(map)

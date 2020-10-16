@@ -5,12 +5,17 @@
 }
 
 aside {
-    width: clamp(34rem, 25vw, 44rem);
+    width: clamp(20rem, 22vw, 40rem);
     background-color: #FFC120;
     padding: clamp(3rem, 5vw, 8rem);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+aside header {
+    display: flex;
+    flex-direction: column;
 }
 
 aside h2 {
@@ -20,7 +25,7 @@ aside h2 {
 
 aside p {
     margin-top: 2.4rem;
-    font: 400 1.6rem/1 'Alta', sans-serif;
+    font: 400 1.8rem/1 'Alta', sans-serif;
 }
 
 aside footer p {

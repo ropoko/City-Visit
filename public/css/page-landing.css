@@ -11,11 +11,12 @@
 }
 
 #logo {
-    width: 128px;
-    animation-delay: 50ms;
+    width: clamp(28rem, 30vw, 40rem);
 }
 
-.location, h1, .visit p {
+.location,
+h1,
+.visit p {
     height: 16vh;
 }
 
@@ -39,6 +40,7 @@
 
 .location {
     animation-delay: 100ms;
+    color: black;
 }
 
 main h1 {
@@ -50,19 +52,22 @@ main h1 {
     animation-delay: 200ms;
 }
 
+
 /* desktop version */
 
 @media (min-width: 760px) {
     #container {
         padding: 5rem 2rem;
-        background: url("../img/bg.png") no-repeat 80% / clamp(30rem, 54vw, 56rem);
+        background: url("../img/menina.png") no-repeat 65% / clamp(30rem, 36vw, 40rem);
     }
     header {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
-    .location, h1, .visit p {
+    .location,
+    h1,
+    .visit p {
         height: initial;
         text-align: initial;
     }
