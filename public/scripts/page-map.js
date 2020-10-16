@@ -10,17 +10,21 @@ const icon = L.icon({
     popupAnchor: [170, 2]
 })
 
-const popup = L.popup({
-    closeButton: false,
-    className: 'map-popup',
-    minWidth: 240,
-    minHeight: 240
-}).setContent('Patos <a href="location.html?id=1" class="choose-location"> <img src="./public/img/arrow-white.svg"></a>')
 
-L.marker([-22.4975187, -48.5619259], { icon })
-    .addTo(map)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-    .openPopup();
+function addMarker({ id, name, lat, lng }) {
+
+    const popup = L.popup({
+        closeButton: false,
+        className: 'map-popup',
+        minWidth: 240,
+        minHeight: 240
+    }).setContent(`${name} <a href="location.html?id=${id}" class="choose-location"> <img src="./public/img/arrow-white.svg"></a>`)
+
+    L.marker([lat, lng], { icon })
+        .addTo(map)
+        .bindPopup(popup)
+}
+
 
 // image gallery
 
@@ -39,3 +43,15 @@ function selectImage(event) {
 
     button.classList.add('active');
 }
+
+const locationsSpan = document.querySelectorAll('.locations span')
+locationsSpan.forEach((el) => {
+    const location = {
+        id: el.dataset.id,
+        name: el.dataset.name,
+        lat: el.dataset.lat,
+        lng: el.dataset.lng
+    }
+
+    addMarker(location);
+})
