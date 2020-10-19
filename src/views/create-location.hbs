@@ -5,19 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
 
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
 
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/animations.css">
-    <link rel="stylesheet" href="/css/page-landing.css">
-    <link rel="stylesheet" href="/css/page-create-location.css">
-    <link rel="stylesheet" href="/css/sidebar.css">
-    <link rel="stylesheet" href="/css/map.css">
-    <link rel="stylesheet" href="/css/form.css">
-    <link rel="stylesheet" href="/css/buttom.css">
+    <link rel="stylesheet" type="text/css" href="/css/form.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/animations.css">
+    <link rel="stylesheet" type="text/css" href="/css/page-landing.css">
+    <link rel="stylesheet" type="text/css" href="/css/page-create-location.css">
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="/css/map.css">
+    <link rel="stylesheet" type="text/css" href="/css/buttom.css">
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
     <title>Localize um ponto turístico</title>
 </head>
@@ -75,7 +79,7 @@
                                 </span>
                             </div>
                         </div>
-                        <button onclick="addPhotoField()" type="button">
+                        <button onclick="addPhotoField()" class="addPhoto" type="button">
                             <img src="/img/add-file.svg" alt="Nova Imagem">
                         </button>
                     </div>
@@ -99,11 +103,12 @@
                         <input id="open_on_weekends" name="open_on_weekends" type="hidden" value="1">
 
                         <div class="button-select">
-                            <button data-value="1" onclick="toggleSelect(event)" type="button" class="active">Sim</button>
+                            <button data-value="1" onclick="toggleSelect(event)" type="button"
+                                class="active">Sim</button>
                             <button data-value="0" onclick="toggleSelect(event)" type="button">Nao</button>
                         </div>
 
-                        <button type="submit">Confirmar</button>
+                        <button class="primary-button" type="submit">Confirmar</button>
 
                     </div>
 
@@ -111,7 +116,7 @@
             </form>
         </main>
     </div>
-    <script src="public/scripts/page-create-location.js"></script>
+    <script type="text/javascript" src="/scripts/page-create-location.js"></script>
 </body>
 
 </html>

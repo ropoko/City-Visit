@@ -5,9 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
 
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
 
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="/css/main.css">
@@ -17,7 +21,7 @@
     <link rel="stylesheet" href="/css/buttom.css">
     <link rel="stylesheet" href="/css/page-location.css">
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
-    <title>Location</title>
+    <title>{{ location.name }}</title>
 </head>
 
 <body>
@@ -33,56 +37,57 @@
 
         <main class="animate-appear with-sidebar">
             <div class="location-details">
-                <img src="https://source.unsplash.com/random?id=1" alt="Local">
+                <img src="{{location.firstImage}}" alt="{{location.name}}">
 
                 <div class="images">
+                    {{#each location.images}}
                     <button onclick="selectImage(event)" class="active" type="button">
-                        <img src="https://source.unsplash.com/random?id=2" alt="">
+                        <img src="{{this}}" alt="{{location.name}}">
                     </button>
-                    <button onclick="selectImage(event)" class="active" type="button">
-                        <img src="https://source.unsplash.com/random?id=3" alt="">
-                    </button>
-                    <button onclick="selectImage(event)" class="active" type="button">
-                        <img src="https://source.unsplash.com/random?id=4" alt="">
-                    </button>
-                    <button onclick="selectImage(event)" class="active" type="button">
-                        <img src="https://source.unsplash.com/random?id=5" alt="">
-                    </button>
-                    <button onclick="selectImage(event)" class="active" type="button">
-                        <img src="https://source.unsplash.com/random?id=6" alt="">
-                    </button>
-                    <button onclick="selectImage(event)" class="active" type="button">
-                        <img src="https://source.unsplash.com/random?id=7" alt="">
-                    </button>
+                    {{/each}}
                 </div>
 
                 <div class="location-details-content">
-                    <h1>Ponto principal da Cidade</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas atque commodi, eum architecto sunt perspiciatis dicta maxime ra </p>
+                    <h1>{{location.name}}</h1>
+                    <p>{{location.about}}</p>
                     <div class="map-container">
                         <div id="mapid"></div>
+                        <span data-lat="{{location.lat}}" data-lng="{{location.lng}}">
+
+                        </span>
                         <footer>
-                            <a href="#">Ver Rotas no Google Maps</a>
+                            <a href="https://maps.google.com/mobile?q={{location.lat}},{{location.lng}}&z=15"
+                                target="_blank">
+                                Ver Rotas no Google Maps
+                            </a>
                         </footer>
                     </div>
                     <hr />
 
                     <h2>Intrucoes para Visita</h2>
-                    <p>asdhaisdgaskdugasdkjasgdklasjdgaskljdgaskljdg</p>
+                    <p>{{location.instructions}}</p>
 
                     <div class="open-details">
                         <div class="hour">
-                            <img src="/img/clock.svg" alt="Horario"> Horario de visitas das 18h as 8h
+                            <img src="/img/clock.svg" alt="Horario"> {{location.opening_hours}}
                         </div>
-                        <div class="open-on-weekends">
-                            <img src="/img/info.svg" alt="Info"> Atendemos Fim de Semana
+
+                        {{#if location.open_on_weekends}}
+                        <div class="open-on-weekends open">
+                            <img src="/img/info.svg" alt="Info" /> Atendemos fim de semana
                         </div>
+                        {{else}}
+                        <div class="open-on-weekends closed">
+                            <img src="/img/info-red.svg" alt="Info" /> Não atendemos fim de semana
+                        </div>
+                        {{/if}}
+
                     </div>
 
-                    <button type="button" class="primary-button">
+                    <a href="https://api.whatsapp.com/send?l=pt_BR&phone={{location.whatsapp}}" target="_blank" type="button" class="primary-button">
                         <img src="/img/whatsapp.svg" alt="whatsapp">
                         Entrar em contato
-                    </button>
+                    </a>
 
                 </div>
             </div>
