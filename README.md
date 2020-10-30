@@ -1,4 +1,6 @@
 # City-Visit
+![](https://github.com/ropoko/City-Visit/blob/main/public/img/screenshot.png)
+
 Projeto desenvolvido com base nos Workshops da Next Level Week #3
 
 O projeto tem como finalidade mostrar os principais pontos turísticos de uma cidade.
